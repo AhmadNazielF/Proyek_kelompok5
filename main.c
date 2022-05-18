@@ -224,7 +224,7 @@ int main(int banyakArgumen, char *argumen[]){
                fclose(reg2);
           } 
                
-          if(temp == 1){
+          if(temp == 1){ //temp = 1 artinya berhasil login
                for (lv = 1; lv <= 5; lv++){
 
                if (lv == 1)
