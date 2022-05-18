@@ -12,7 +12,7 @@ void menu_awal (){
     puts("+---------------------------------------+");
     puts("|\t\t(1)Mulai\t\t|\n|\t\t(2)Keluar\t\t|");
     puts("+---------------------------------------+");
-    printf("Masukan Input :");
+    printf("Masukan Input : ");
     scanf(" %d", &pilihan);
      
 }
