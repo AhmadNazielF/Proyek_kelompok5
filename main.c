@@ -1,16 +1,16 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-
+// Varibel yang diperlukan
 int lv = 1, pilihan;
 long int uang = 0 ;
 char jwb[4];
-int main();
+// di deklarsikan agar tidak terjadi error
+void mulai();
 
 //menampilkan tampilan awal
-void menu_awal (){
+void menu (){
     puts("+---------------------------------------+");
     puts("|\tWho Wants To Be Milioanare\t|");
     puts("+---------------------------------------+");
@@ -33,7 +33,7 @@ void kembali(){
      scanf(" %c", kembali);
 
      if (kembali[0] == 'y' || kembali[0] == 'Y'){
-     int main(); 
+     mulai(); 
      }
      else{
           printf("Terimakasih Telah Bermain");
@@ -144,108 +144,53 @@ void soal5(){
      GameOver();
      }
 }
-void soal6(){
-     level();
-     puts("------------------------------------------------+");
-     puts("|\tPemain bola yang bertugas mencegah lawan\t|\n|\t\t mencetak gol disebut?\t\t|");
-     puts("+-----------------------------------------------+");
-     puts("| A.Wasit                     B.Libero          |");
-     puts("|                                               |");
-     puts("| C.Kiper                     D.Striker         |");
-     puts("+-----------------------------------------------+");
-     printf("Jawaban Anda : "); scanf(" %s", &jwb[4]);
+// fungsi untuk memulai permainan
+void mulai(){
+    //untuk mengembalikan nilai uang
+     int k = 0;
+     uang = uang * k;
      
-     if(jwb[5] == 'C' || jwb[5] == 'c' ){
-          benar();
-     }
-     else {
-     GameOver();
-     }
-}
-void soal7(){
-     level();
-     puts("+-----------------------------------------------+");
-     puts("|      Kekurangan air pada tubuh disebut?       |");
-     puts("+-----------------------------------------------+");
-     puts("| A.Hidrasi                 B.Dehidrasi         |");
-     puts("|                                               |");
-     puts("| C.Depresi                 D.Metabolisme       |");
-     puts("+-----------------------------------------------+");
-     printf("Jawaban Anda : "); scanf(" %s", &jwb[3]);
-     
-     if(jwb[6] == 'B' || jwb[6] == 'b' ){
-          benar();
-     }
-     else {
-     GameOver();
-     }
-}
-void soal8(){
-     level();
-     puts("------------------------------------------------+");
-     puts("|\tManakah dibawah ini yang merupakan sistem \t|\n|\t\t operasi?\t\t|");
-     puts("+-----------------------------------------------+");
-     puts("| A.Windows11               B.Microsoft excel   |");
-     puts("|                                               |");
-     puts("| C.Google chrome           D.Adobe             |");
-     puts("+-----------------------------------------------+");
-     printf("Jawaban Anda : "); scanf(" %s", &jwb[4]);
-     
-     if(jwb[7] == 'A' || jwb[7] == 'a' ){
-          benar();
-     }
-     else {
-     GameOver();
-     }
-}
-void soal9(){
-     level();
-     puts("+-----------------------------------------------+");
-     puts("|           Ibukota turki adalah?               |");
-     puts("+-----------------------------------------------+");
-     puts("| A.Kabul                 B.Pretoria            |");
-     puts("|                                               |");
-     puts("| C.London                D.Ankara              |");
-     puts("+-----------------------------------------------+");
-     printf("Jawaban Anda : "); scanf(" %s", &jwb[3]);
-     
-     if(jwb[8] == 'D' || jwb[8] == 'd' ){
-          benar();
-     }
-     else {
-     GameOver();
-     }
-}
-void soal10(){
-     level();
-     puts("+-----------------------------------------------+");
-     puts("|   Perintah untuk membuat database adalah?     |");
-     puts("+-----------------------------------------------+");
-     puts("| A.Create Table              B.Create Database |");
-     puts("|                                               |");
-     puts("| C.Create DB                 D.Create Tab      |");
-     puts("+-----------------------------------------------+");
-     printf("Jawaban Anda : "); scanf(" %s", &jwb[3]);
-     
-     if(jwb[9] == 'B' || jwb[9] == 'b' ){
-          benar();
-     }
-     else {
-     GameOver();
+     menu();
+
+     if(pilihan == 1){
+     for (lv = 1; lv <= 5; lv++){
+
+               if (lv == 1)
+               {
+                    soal1();
+                    uang = 10000000;
+               }
+               if (lv == 2)
+               {
+                    soal2();
+                    uang = 50000000;
+               }
+               if (lv == 3)
+               {
+                    soal3();
+                    uang = 100000000;
+               }if (lv == 4)
+               {
+                    soal4();
+                    uang = 500000000;
+               }if (lv == 5)
+               {
+                    soal5();
+                    uang = 1000000000;
+                    printf("Selamat Anda Menang!!\n");
+                    printf("Anda Dapat Membawa Pulang Uang Senilai %li\n", uang);
+                    kembali();
+               }
+          }
+       }
+        else{
+          printf("Terimakasih Telah Berkunjung!");
      }
 }
 //fungsi Utama
 int main(int banyakArgumen, char *argumen[]){
      int temp; //jika berhasil login temp = 1
-     //untuk mengembalikan nilai uang
-     int k = 0;
-     uang = uang * k;
-     //untuk memulai permainan
-     menu_awal();
 
-     printf("\nSelamat Bermain !!!\n");
-
-     if(pilihan == 1){
           //LOGIN
           // variabel untuk menampung username dan password
           char login[20];
@@ -254,9 +199,9 @@ int main(int banyakArgumen, char *argumen[]){
           // jika banyak argumen 1, maka akan dilakukan registrasi akun
           if(banyakArgumen == 1){
                FILE *reg1 = fopen("login.bin", "wb");
-               printf("----------------------------\n");
-               printf("  Registrasi Pembuatan akun \n");
-               printf("----------------------------\n");
+               printf("+----------------------------------------------------------+\n");
+               printf("|                 Registrasi Pembuatan akun                |\n");
+               printf("+----------------------------------------------------------+\n");
                printf("Masukkan username dan password mengikuti format berikut !\n");
                printf("username@password : ");
                scanf("%s", login);
@@ -307,7 +252,7 @@ int main(int banyakArgumen, char *argumen[]){
                strcpy(password, string[1]);
 
                if ( ( strcmp(userInput, username) == 0) && (strcmp(passInput, password) == 0) ){
-                    printf("Selamat anda berhasil login !\n");
+                    printf("\n       Selamat anda berhasil login !\n");
                     temp = 1;
                }
 
@@ -315,39 +260,8 @@ int main(int banyakArgumen, char *argumen[]){
           } 
                
           if(temp == 1){ //temp = 1 artinya berhasil login
-               for (lv = 1; lv <= 5; lv++){
-
-               if (lv == 1)
-               {
-                    soal1();
-                    uang = 10000000;
-               }
-               if (lv == 2)
-               {
-                    soal2();
-                    uang = 50000000;
-               }
-               if (lv == 3)
-               {
-                    soal3();
-                    uang = 100000000;
-               }if (lv == 4)
-               {
-                    soal4();
-                    uang = 500000000;
-               }if (lv == 5)
-               {
-                    soal5();
-                    uang = 1000000000;
-                    printf("Selamat Anda Menang!!\n");
-                    printf("Anda Dapat Membawa Pulang Uang Senilai %li\n", uang);
-                    kembali();
-               }
-          }
-     }               
-}
-     else{
-          printf("Terimakasih Telah Berkunjung!");
-     }
+             mulai();  
+     }             
+    
     return 0;
 }
