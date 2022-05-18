@@ -53,13 +53,13 @@ void GameOver (){
 //fungsi yang berisi soal-soal
 void soal1(){
      level();
-     puts("+--------------------------------------------+");
-     puts("|1. Peso merupakan mata uang dari negara?\t\t|");
-     puts("+--------------------------------------------+");
-     puts("A.Peru");
-     puts("B.Maroko");
-     puts("C.Filipina");
-     puts("D.Thailand");
+     puts("+-----------------------------------------------+");
+     puts("|    Peso merupakan mata uang dari negara?      |");
+     puts("+-----------------------------------------------+");
+     puts("| A.Peru                           B.Maroko     |");
+     puts("|                                               |");
+     puts("| C.Filipina                       D.Thailand   |");
+     puts("+-----------------------------------------------+");
      printf("Jawaban Anda : "); scanf(" %s", &jwb[0]);
      
      if(jwb[0] == 'C' || jwb[0] == 'c' ){
@@ -72,13 +72,14 @@ void soal1(){
 }
 void soal2(){
      level();
-     puts("+------------------------------------------------------------------------------------------+");
-     puts("|2. Tunarungu merupakan istilah yang digunakan kepada orang yang memiliki gangguan apa?\t\t|");
-     puts("+------------------------------------------------------------------------------------------+");
-     puts("A.Penglihatan");
-     puts("B.Saraf");
-     puts("C.Pendengaran");
-     puts("D.Organ dalam");
+     puts("+-----------------------------------------------+");
+     puts("|  Tunarungu merupakan istilah yang digunakan\t|\n|   kepada orang yang memiliki gangguan apa?\t|");
+     puts("+-----------------------------------------------+");
+     puts("| A.Penglihatan                   B.Saraf       |");
+     puts("|                                               |");
+     puts("| C.Pendengaran                   D.Organ dalam |");
+     puts("+-----------------------------------------------+");
+
      printf("Jawaban Anda : "); scanf(" %s", &jwb[1]);
      
      if(jwb[1] == 'C' || jwb[1] == 'c' ){
@@ -91,13 +92,13 @@ void soal2(){
 }
 void soal3(){
      level();
-     puts("+------------------------------+");
-     puts("|3. Siapakah pendiri gojek?\t\t|");
-     puts("+------------------------------+");
-     puts("A.Nadiem Makarim");
-     puts("B.Larry Page");
-     puts("C.Anies Baswedan");
-     puts("D.Bill Gates");
+     puts("+-----------------------------------------------+");
+     puts("|           Siapakah pendiri gojek?             |");
+     puts("+-----------------------------------------------+");
+     puts("| A.Nadiem Makarim               B.Larry Page   |");
+     puts("|                                               |");
+     puts("| C.Anies Baswedan               D.Bill Gates   |");
+     puts("+-----------------------------------------------+");
      printf("Jawaban Anda : "); scanf(" %s", &jwb[2]);
      
      if(jwb[2] == 'A' || jwb[2] == 'a' ){
@@ -109,13 +110,13 @@ void soal3(){
 }
 void soal4(){
      level();
-     puts("+----------------------------------------------+");
-     puts("|4. Apakah nama sungai terpanjang di dunia?\t\t|");
-     puts("+----------------------------------------------+");
-     puts("A.Yellow River");
-     puts("B.Amazon");
-     puts("C.Kapuas");
-     puts("D.Nil");
+     puts("+-----------------------------------------------+");
+     puts("|    Apakah nama sungai terpanjang di dunia?    |");
+     puts("+-----------------------------------------------+");
+     puts("| A.Yellow River                 B.Amazon       |");
+     puts("|                                               |");
+     puts("| C.Kapuas                       D.Nil          |");
+     puts("+-----------------------------------------------+");
      printf("Jawaban Anda : "); scanf(" %s", &jwb[3]);
      
      if(jwb[3] == 'D' || jwb[3] == 'd' ){
@@ -127,13 +128,13 @@ void soal4(){
 }
 void soal5(){
      level();
-     puts("+------------------------------------+");
-     puts("|5. Apakah pengertian dari array?\t\t|");
-     puts("+------------------------------------+");
-     puts("A.Proses perulangan suatu blok pernyataan sebanyak yang diinginkan");
-     puts("B.Struktur data yang memiliki data dengan tipe yang sama");
-     puts("C.Variabel yang dapat memegang alamat dari suatu objek dalam memori");
-     puts("D.Struktur data yang memiliki data dengan tipe yang sama");
+     puts("------------------------------------------------+");
+     puts("|\tTipe Data Apa Yang Mempresentasikan\t|\n|\t\t Bilangan Bulat?\t\t|");
+     puts("+-----------------------------------------------+");
+     puts("| A.Pointer                     B.Interger      |");
+     puts("|                                               |");
+     puts("| C.String                      D.Float         |");
+     puts("+-----------------------------------------------+");
      printf("Jawaban Anda : "); scanf(" %s", &jwb[4]);
      
      if(jwb[4] == 'B' || jwb[4] == 'b' ){
@@ -146,9 +147,9 @@ void soal5(){
 
 //fungsi Utama
 int main(int banyakArgumen, char *argumen[]){
+     int temp; //jika berhasil login temp = 1
      //untuk mengembalikan nilai uang
      int k = 0;
-     int temp; //jika berhasil login temp = 1
      uang = uang * k;
      //untuk memulai permainan
      menu_awal();
