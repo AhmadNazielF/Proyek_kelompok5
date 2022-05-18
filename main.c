@@ -1,4 +1,8 @@
+
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 
 int lv = 1, pilihan;
 long int uang = 0 ;
@@ -29,7 +33,7 @@ void kembali(){
      scanf(" %c", kembali);
 
      if (kembali[0] == 'y' || kembali[0] == 'Y'){
-     main(); 
+     int main(); 
      }
      else{
           printf("Terimakasih Telah Bermain");
@@ -49,9 +53,9 @@ void GameOver (){
 //fungsi yang berisi soal-soal
 void soal1(){
      level();
-     puts("+-----------------------+");
+     puts("+--------------------------------------------+");
      puts("|1. Peso merupakan mata uang dari negara?\t\t|");
-     puts("+-----------------------+");
+     puts("+--------------------------------------------+");
      puts("A.Peru");
      puts("B.Maroko");
      puts("C.Filipina");
@@ -68,9 +72,9 @@ void soal1(){
 }
 void soal2(){
      level();
-     puts("+-----------------------+");
+     puts("+------------------------------------------------------------------------------------------+");
      puts("|2. Tunarungu merupakan istilah yang digunakan kepada orang yang memiliki gangguan apa?\t\t|");
-     puts("+-----------------------+");
+     puts("+------------------------------------------------------------------------------------------+");
      puts("A.Penglihatan");
      puts("B.Saraf");
      puts("C.Pendengaran");
@@ -87,9 +91,9 @@ void soal2(){
 }
 void soal3(){
      level();
-     puts("+-----------------------+");
+     puts("+------------------------------+");
      puts("|3. Siapakah pendiri gojek?\t\t|");
-     puts("+-----------------------+");
+     puts("+------------------------------+");
      puts("A.Nadiem Makarim");
      puts("B.Larry Page");
      puts("C.Anies Baswedan");
@@ -105,9 +109,9 @@ void soal3(){
 }
 void soal4(){
      level();
-     puts("+-----------------------+");
+     puts("+----------------------------------------------+");
      puts("|4. Apakah nama sungai terpanjang di dunia?\t\t|");
-     puts("+-----------------------+");
+     puts("+----------------------------------------------+");
      puts("A.Yellow River");
      puts("B.Amazon");
      puts("C.Kapuas");
@@ -123,9 +127,9 @@ void soal4(){
 }
 void soal5(){
      level();
-     puts("+-----------------------+");
+     puts("+------------------------------------+");
      puts("|5. Apakah pengertian dari array?\t\t|");
-     puts("+-----------------------+");
+     puts("+------------------------------------+");
      puts("A.Proses perulangan suatu blok pernyataan sebanyak yang diinginkan");
      puts("B.Struktur data yang memiliki data dengan tipe yang sama");
      puts("C.Variabel yang dapat memegang alamat dari suatu objek dalam memori");
@@ -141,9 +145,10 @@ void soal5(){
 }
 
 //fungsi Utama
-int main(){
+int main(int banyakArgumen, char *argumen[]){
      //untuk mengembalikan nilai uang
      int k = 0;
+     int temp; //jika berhasil login temp = 1
      uang = uang * k;
      //untuk memulai permainan
      menu_awal();
@@ -151,8 +156,77 @@ int main(){
      printf("\nSelamat Bermain !!!\n");
 
      if(pilihan == 1){
-          for (lv = 1; lv <= 5; lv++)
-          {
+          //LOGIN
+          // variabel untuk menampung username dan password
+          char login[20];
+          
+
+          // jika banyak argumen 1, maka akan dilakukan registrasi akun
+          if(banyakArgumen == 1){
+               FILE *reg1 = fopen("login.bin", "wb");
+               printf("----------------------------\n");
+               printf("  Registrasi Pembuatan akun \n");
+               printf("----------------------------\n");
+               printf("Masukkan username dan password mengikuti format berikut !\n");
+               printf("username@password : ");
+               scanf("%s", login);
+               fwrite(&login, sizeof(login), 1, reg1);
+               printf("+-----------------------------------------------------------+\n");
+               printf("| Cara Penggunaan : ./FileProgramUtaman username password   |\n");
+               printf("+-----------------------------------------------------------+\n");
+               fclose(reg1);
+          }
+
+          // jika banyak argumen tidak 3 dan 1, makan program akan memberitahu user
+          // cara login yang benar.
+          if (banyakArgumen != 3 && banyakArgumen != 1){
+               printf("Gagal login !\n");
+               printf("+-----------------------------------------------------------+\n");
+               printf("| Cara Penggunaan : ./FileProgramUtaman username password   |\n");
+               printf("+-----------------------------------------------------------+\n");
+          }
+
+          // jika banyakArgummen 3, maka akan dijalankan login 
+          if (banyakArgumen == 3){
+               char userInput[10], passInput[10];
+               strcpy(userInput, argumen[1]);
+               strcpy(passInput, argumen[2]);
+
+               FILE *reg2;
+
+               if((reg2 = fopen ("login.bin", "rb")) == NULL){
+                    printf("Gagal membukan file !\n");
+                    return EXIT_FAILURE;
+               }
+
+               char akun[20];
+               fread(akun,  sizeof(char), sizeof(akun)/sizeof(char), reg2);
+
+               fclose(reg2);
+
+               char *string[3];
+               char username[20], password[20];
+               int ctrl = 0;
+
+               string[0] = strtok(akun, "@");
+               while (string[ctrl++] != NULL){
+                    string[ctrl] = strtok(NULL, "@");
+               }
+
+               strcpy(username, string[0]);
+               strcpy(password, string[1]);
+
+               if ( ( strcmp(userInput, username) == 0) && (strcmp(passInput, password) == 0) ){
+                    printf("Selamat anda berhasil login !\n");
+                    temp = 1;
+               }
+
+               fclose(reg2);
+          } 
+               
+          if(temp == 1){
+               for (lv = 1; lv <= 5; lv++){
+
                if (lv == 1)
                {
                     soal1();
@@ -180,7 +254,8 @@ int main(){
                     kembali();
                }
           }
-     }
+     }               
+}
      else{
           printf("Terimakasih Telah Berkunjung!");
      }
