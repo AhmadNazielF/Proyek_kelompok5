@@ -144,7 +144,96 @@ void soal5(){
      GameOver();
      }
 }
-
+void soal6(){
+     level();
+     puts("------------------------------------------------+");
+     puts("|\tPemain bola yang bertugas mencegah lawan\t|\n|\t\t mencetak gol disebut?\t\t|");
+     puts("+-----------------------------------------------+");
+     puts("| A.Wasit                     B.Libero          |");
+     puts("|                                               |");
+     puts("| C.Kiper                     D.Striker         |");
+     puts("+-----------------------------------------------+");
+     printf("Jawaban Anda : "); scanf(" %s", &jwb[4]);
+     
+     if(jwb[5] == 'C' || jwb[5] == 'c' ){
+          benar();
+     }
+     else {
+     GameOver();
+     }
+}
+void soal7(){
+     level();
+     puts("+-----------------------------------------------+");
+     puts("|      Kekurangan air pada tubuh disebut?       |");
+     puts("+-----------------------------------------------+");
+     puts("| A.Hidrasi                 B.Dehidrasi         |");
+     puts("|                                               |");
+     puts("| C.Depresi                 D.Metabolisme       |");
+     puts("+-----------------------------------------------+");
+     printf("Jawaban Anda : "); scanf(" %s", &jwb[3]);
+     
+     if(jwb[6] == 'B' || jwb[6] == 'b' ){
+          benar();
+     }
+     else {
+     GameOver();
+     }
+}
+void soal8(){
+     level();
+     puts("------------------------------------------------+");
+     puts("|\tManakah dibawah ini yang merupakan sistem \t|\n|\t\t operasi?\t\t|");
+     puts("+-----------------------------------------------+");
+     puts("| A.Windows11               B.Microsoft excel   |");
+     puts("|                                               |");
+     puts("| C.Google chrome           D.Adobe             |");
+     puts("+-----------------------------------------------+");
+     printf("Jawaban Anda : "); scanf(" %s", &jwb[4]);
+     
+     if(jwb[7] == 'A' || jwb[7] == 'a' ){
+          benar();
+     }
+     else {
+     GameOver();
+     }
+}
+void soal9(){
+     level();
+     puts("+-----------------------------------------------+");
+     puts("|           Ibukota turki adalah?               |");
+     puts("+-----------------------------------------------+");
+     puts("| A.Kabul                 B.Pretoria            |");
+     puts("|                                               |");
+     puts("| C.London                D.Ankara              |");
+     puts("+-----------------------------------------------+");
+     printf("Jawaban Anda : "); scanf(" %s", &jwb[3]);
+     
+     if(jwb[8] == 'D' || jwb[8] == 'd' ){
+          benar();
+     }
+     else {
+     GameOver();
+     }
+}
+void soal10(){
+     level();
+     puts("+-----------------------------------------------+");
+     puts("|   Perintah untuk membuat database adalah?     |");
+     puts("+-----------------------------------------------+");
+     puts("| A.Create Table              B.Create Database |");
+     puts("|                                               |");
+     puts("| C.Create DB                 D.Create Tab      |");
+     puts("+-----------------------------------------------+");
+     printf("Jawaban Anda : "); scanf(" %s", &jwb[3]);
+     
+     if(jwb[9] == 'B' || jwb[9] == 'b' ){
+          benar();
+     }
+     else {
+     GameOver();
+     }
+}
 //fungsi Utama
 int main(int banyakArgumen, char *argumen[]){
      int temp; //jika berhasil login temp = 1
