@@ -4,12 +4,11 @@
 #include "soal.h"
 #include "Declaration.h"
 
-
-
 // fungsi Utama
-int main(int banyakArgumen, char *argumen[]){
-    lv = 1;
-    uang = 0;
+int main(int banyakArgumen, char *argumen[])
+{
+     lv = 1;
+     uang = 0;
 
      int temp; // jika berhasil login temp = 1
 
@@ -20,7 +19,7 @@ int main(int banyakArgumen, char *argumen[]){
      // jika banyak argumen 1, maka akan dilakukan registrasi akun
      if (banyakArgumen == 1)
      {
-          FILE *reg1 = fopen("login.bin", "wb");
+          FILE *reg1 = fopen("database/login.bin", "wb");
           printf("+----------------------------------------------------------+\n");
           printf("|                 Registrasi Pembuatan Akun                |\n");
           printf("+----------------------------------------------------------+\n");
@@ -53,7 +52,7 @@ int main(int banyakArgumen, char *argumen[]){
 
           FILE *reg2;
 
-          if ((reg2 = fopen("login.bin", "rb")) == NULL)
+          if ((reg2 = fopen("database/login.bin", "rb")) == NULL)
           {
                printf("Gagal membukan file !\n");
                return EXIT_FAILURE;
@@ -82,9 +81,10 @@ int main(int banyakArgumen, char *argumen[]){
                printf("\n       Selamat anda berhasil login !\n");
                temp = 1;
           }
-          else{
-                printf("Terjadi kesalahan saat login !\n");
-                printf("Silahkan login atau registrasi ulang !\n");
+          else
+          {
+               printf("Terjadi kesalahan saat login !\n");
+               printf("Silahkan login atau registrasi ulang !\n");
           }
 
           fclose(reg2);
@@ -114,44 +114,55 @@ void mulai()
           for (lv = 1; lv <= 10; lv++)
           {
 
-               if (lv == 1){
+               if (lv == 1)
+               {
                     soal1();
                     uang = 50000;
                }
-               if (lv == 2){
+               if (lv == 2)
+               {
                     soal2();
                     uang = 250000;
                }
-               if (lv == 3){
+               if (lv == 3)
+               {
                     soal3();
                     uang = 500000;
                }
-               if (lv == 4){
+               if (lv == 4)
+               {
                     soal4();
                     uang = 1000000;
                }
-               if (lv == 5){
+               if (lv == 5)
+               {
                     soal5();
                     uang = 100000000;
                     continue;
                }
-               if (lv == 6){
+               if (lv == 6)
+               {
                     soal6();
                }
-               if (lv == 7){
+               if (lv == 7)
+               {
                     soal7();
                     uang = 200000000;
                }
-               if (lv == 8){
+               if (lv == 8)
+               {
                     soal8();
                     uang = 500000000;
                }
-               if (lv == 9){
+               if (lv == 9)
+               {
                     soal9();
-                    uang = 1000000000;
+                    uang = 750000000;
                }
-               if (lv == 10){
+               if (lv == 10)
+               {
                     soal10();
+                    uang = 1000000000;
                     printf("Selamat Anda Berhasil Mendapatkan Hadiah utama\n");
                     printf("Uang Senilai %li\n", uang);
                     kembali();
