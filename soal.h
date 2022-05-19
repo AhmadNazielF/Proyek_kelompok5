@@ -30,13 +30,13 @@ void soal1()
 void soal2()
 {
      level();
-     puts("+-----------------------------------------------+");
-     puts("|  Tunarungu merupakan istilah yang digunakan\t|\n|   kepada orang yang memiliki gangguan apa?\t|");
-     puts("+-----------------------------------------------+");
-     puts("| A.Penglihatan                   B.Saraf       |");
-     puts("|                                               |");
-     puts("| C.Pendengaran                   D.Organ dalam |");
-     puts("+-----------------------------------------------+");
+     puts("+-------------------------------------------------------+");
+     puts("|\tTunarungu merupakan istilah yang digunakan\t|\n|\tkepada orang yang memiliki gangguan apa?\t|");
+     puts("+-------------------------------------------------------+");
+     puts("| A.Penglihatan                   B.Saraf       \t|");
+     puts("|                                               \t|");
+     puts("| C.Pendengaran                   D.Organ dalam \t|");
+     puts("+-------------------------------------------------------+");
 
      printf("Jawaban Anda : ");
      scanf(" %s", &jwb[1]);
@@ -98,7 +98,7 @@ void soal5()
 {
      level();
      puts("------------------------------------------------+");
-     puts("|\tTipe Data Apa Yang Mempresentasikan\t|\n|\t\t Bilangan Bulat?\t\t|");
+     puts("|\tTipe Data Apa Yang Mempresentasikan\t|\n|\t\tBilangan Bulat?\t\t\t|");
      puts("+-----------------------------------------------+");
      puts("| A.Pointer                     B.Interger      |");
      puts("|                                               |");
@@ -122,13 +122,13 @@ void soal5()
 void soal6()
 {
      level();
-     puts("------------------------------------------------+");
-     puts("|\tPemain bola yang bertugas mencegah lawan|\n|\t\t mencetak gol disebut?\t\t|");
-     puts("+-----------------------------------------------+");
-     puts("| A.Wasit                     B.Libero          |");
-     puts("|                                               |");
-     puts("| C.Kiper                     D.Striker         |");
-     puts("+-----------------------------------------------+");
+     puts("--------------------------------------------------------+");
+     puts("|\tPemain bola yang bertugas mencegah lawan\t|\n|\t\t mencetak gol disebut?\t\t\t|");
+     puts("+-------------------------------------------------------+");
+     puts("| A.Wasit                     B.Libero          \t|");
+     puts("|                                               \t|");
+     puts("| C.Kiper                     D.Striker         \t|");
+     puts("+-------------------------------------------------------+");
      printf("Jawaban Anda : ");
      scanf(" %s", &jwb[5]);
 
@@ -167,7 +167,7 @@ void soal8()
 {
      level();
      puts("------------------------------------------------+");
-     puts("|\tManakah dibawah ini yang merupakan sistem \t|\n|\t\t operasi?\t\t|");
+     puts("|\tManakah dibawah ini yang merupakan\t|\n|\t\t sistem operasi?\t\t|");
      puts("+-----------------------------------------------+");
      puts("| A.Windows11               B.Microsoft excel   |");
      puts("|                                               |");
