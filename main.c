@@ -100,6 +100,10 @@ int main(int banyakArgumen, char *argumen[])
                printf("\n       Selamat anda berhasil login !\n");
                temp = 1;
           }
+          else{
+               printf("Terjadi kesalahan saat login !\n");
+               printf("Silahkan login atau registrasi ulang !\n");
+          }
 
           fclose(reg2);
      }
@@ -184,7 +188,7 @@ void checkpoint()
      printf("Apakah anda ingin lanjut bermain dengan konsekuensi jika jawaban pada soal berikutnya salah maka, tidak mendapatkan apa-apa\n");
      printf("atau berhenti sampai disini dengan nominal uang Rp50.000.000,00 ?\n");
      printf("Masukkan pilihan anda lanjut atau tidak (y/t) : ");
-     scanf("\n%c", &cekpoin);
+     scanf("\n%s", cekpoin);
      printf("\n");
      if (cekpoin[0] == 'Y' || cekpoin[0] == 'y')
      {
