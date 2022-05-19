@@ -6,7 +6,7 @@
 int lv = 1, pilihan;
 long int uang = 0;
 char jwb[4];
-// di deklarsikan agar tidak terjadi
+// di deklarsikan agar tidak terjadi error
 void mulai();
 // menampilkan tampilan awal
 void menu()
@@ -309,47 +309,47 @@ void mulai()
             if (lv == 2)
             {
                 soal2();
-                uang = 75000;
+                uang = 250000;
             }
             if (lv == 3)
             {
                 soal3();
-                uang = 100000;
+                uang = 500000;
             }
             if (lv == 4)
             {
                 soal4();
-                uang = 500000;
+                uang = 1000000;
             }
             if (lv == 5)
             {
                 soal5();
-                uang = 1000000;
+                uang = 5000000;
             }
             if (lv == 6)
             {
                 soal6();
-                uang = 1250000;
+                uang = 10000000;
             }
             if (lv == 7)
             {
                 soal7();
-                uang = 1500000;
+                uang = 100000000;
             }
             if (lv == 8)
             {
                 soal8();
-                uang = 1750000;
+                uang = 500000000;
             }
             if (lv == 9)
             {
                 soal9();
-                uang = 2000000;
+                uang = 750000000;
             }
             if (lv == 10)
             {
                 soal10();
-                uang = 5000000;
+                uang = 1000000000;
                 printf("Selamat Anda Berhasil Mendapatkan Hadiah utama\n");
                 printf("Uang Senilai %li\n", uang);
                 kembali();
