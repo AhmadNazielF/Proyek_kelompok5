@@ -97,7 +97,7 @@ void soal4()
 void soal5()
 {
      level();
-     puts("------------------------------------------------+");
+     puts("+-----------------------------------------------+");
      puts("|\tTipe Data Apa Yang Mempresentasikan\t|\n|\t\tBilangan Bulat?\t\t\t|");
      puts("+-----------------------------------------------+");
      puts("| A.Pointer                     B.Interger      |");
@@ -122,7 +122,7 @@ void soal5()
 void soal6()
 {
      level();
-     puts("--------------------------------------------------------+");
+     puts("+-------------------------------------------------------+");
      puts("|\tPemain bola yang bertugas mencegah lawan\t|\n|\t\t mencetak gol disebut?\t\t\t|");
      puts("+-------------------------------------------------------+");
      puts("| A.Wasit                     B.Libero          \t|");
@@ -166,7 +166,7 @@ void soal7()
 void soal8()
 {
      level();
-     puts("------------------------------------------------+");
+     puts("+-----------------------------------------------+");
      puts("|\tManakah dibawah ini yang merupakan\t|\n|\t\t sistem operasi?\t\t|");
      puts("+-----------------------------------------------+");
      puts("| A.Windows11               B.Microsoft excel   |");
