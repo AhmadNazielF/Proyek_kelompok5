@@ -162,7 +162,7 @@ void GameOverCheckpoint()
 // fungsi ketika user mencapai titik aman yaitu pada level 5
 void checkpoint()
 {
-     char cekpoin[0];
+     char cekpoin[2];
      printf("Selamat anda telah mencapai titik aman!\n");
      printf("Apakah anda ingin lanjut bermain dengan konsekuensi jika jawaban pada soal berikutnya salah maka, anda tidak dapat membawa pulang apa-apa\n");
      printf("atau berhenti sampai disini dan membawa pulang uang dengan nominal Rp50.000.000,00 ?\n");
