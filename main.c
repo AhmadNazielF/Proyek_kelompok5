@@ -186,10 +186,8 @@ void checkpoint()
 // fungsi untuk memulai permainan
 void mulai()
 {
-     // untuk mengembalikan nilai uang
-     int k;
-     k = 0; 
-     uang = uang * k;
+     // untuk mengembalikan nilai uang 
+     uang = 0;
 
      menu();
 
