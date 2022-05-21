@@ -164,9 +164,9 @@ void checkpoint()
 {
      char cekpoin[2];
      printf("Selamat anda telah mencapai titik aman!\n");
-     printf("Apakah anda ingin lanjut bermain dengan konsekuensi jika jawaban pada soal berikutnya salah maka, tidak mendapatkan apa-apa\n");
-     printf("atau berhenti sampai disini dengan nominal uang Rp50.000.000,00 ?\n");
-     printf("Masukkan pilihan anda lanjut atau tidak (y/t) : ");
+     printf("Apakah anda ingin lanjut bermain dengan konsekuensi jika jawaban pada soal berikutnya salah maka, anda tidak dapat membawa pulang apa-apa\n");
+     printf("atau berhenti sampai disini dan membawa pulang uang dengan nominal Rp50.000.000,00 ?\n");
+     printf("Apakah anda masih ingin melanjutkan permainan? (y/t) : ");
      scanf("\n%s", cekpoin);
      printf("\n");
      if (cekpoin[0] == 'Y' || cekpoin[0] == 'y')
