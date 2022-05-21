@@ -162,32 +162,44 @@ void GameOverCheckpoint()
 // fungsi ketika user mencapai titik aman yaitu pada level 5
 void checkpoint()
 {
-     char cekpoin[2];
+     char cekpoin[0];
      printf("Selamat anda telah mencapai titik aman!\n");
      printf("Apakah anda ingin lanjut bermain dengan konsekuensi jika jawaban pada soal berikutnya salah maka, anda tidak dapat membawa pulang apa-apa\n");
      printf("atau berhenti sampai disini dan membawa pulang uang dengan nominal Rp50.000.000,00 ?\n");
-     printf("Apakah anda masih ingin melanjutkan permainan? (y/t) : ");
-     scanf("\n%s", cekpoin);
-     printf("\n");
-     if (cekpoin[0] == 'Y' || cekpoin[0] == 'y')
+     do
      {
-          soal6();
-     }
-     if (cekpoin[0] == 'T' || cekpoin[0] == 't')
-     {
-          lv = 11;
-          printf("Permainan Telah Berakhir!\n");
-          printf("Selamat Anda Berhasil Membawa Pulang Sejumlah Uang : %li \n", uang);
-          puts("-------------------------------------------------");
-          kembali();
-     }
+          printf("Apakah anda masih ingin melanjutkan permainan? (y/t) : ");
+          scanf("\n%s", cekpoin);
+          printf("\n");
+          if (cekpoin[0] == 'Y' || cekpoin[0] == 'y')
+          {
+               soal6();
+               break;
+          }
+          if (cekpoin[0] == 'T' || cekpoin[0] == 't')
+          {
+               lv = 11;
+               printf("Permainan Telah Berakhir!\n");
+               printf("Selamat Anda Berhasil Membawa Pulang Sejumlah Uang : %li \n", uang);
+               puts("-------------------------------------------------");
+               kembali();
+               break;
+          }
+          else
+          {
+               printf("Error silahkan masukkan inputan yang benar, yaitu huruf y untuk lanjut dan t untuk berhenti\n");
+               continue;
+          }
+     } while (cekpoin[0] != 'Y' || 'y' || 'T' || 't');
 }
 
 // fungsi untuk memulai permainan
 void mulai()
 {
-     // untuk mengembalikan nilai uang 
-     uang = 0;
+     // untuk mengembalikan nilai uang
+     int k;
+     k = 0;
+     uang = uang * k;
 
      menu();
 
@@ -259,4 +271,3 @@ void mulai()
           printf("Terimakasih Telah Berkunjung!");
      }
 }
-
