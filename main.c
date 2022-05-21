@@ -7,9 +7,6 @@
 // fungsi Utama
 int main(int banyakArgumen, char *argumen[])
 {
-     lv = 1;
-     uang = 0;
-
      int temp; // jika berhasil login temp = 1
 
      // LOGIN
@@ -98,10 +95,100 @@ int main(int banyakArgumen, char *argumen[])
      return 0;
 }
 
+// menampilkan tampilan awal
+void menu()
+{
+     puts("+---------------------------------------+");
+     puts("|\tWho Wants To Be Milioanare\t|");
+     puts("+---------------------------------------+");
+     puts("|\t\t(1)Mulai\t\t|\n|\t\t(2)Keluar\t\t|");
+     puts("+---------------------------------------+");
+     printf("Masukan Input : ");
+     scanf(" %d", &pilihan);
+}
+
+// Menampilkan nomor soal dan jumlah uang
+void level()
+{
+
+     printf("Pertanyaan Ke : %d\tJumlah Uang Saat Ini : %li\n", lv, uang);
+}
+
+// fungsi untuk bermain kembali atau berheti bermain
+void kembali()
+{
+     char kembali[2];
+     printf("Apakah Anda Ingin Bermain Lagi? (y/t) :");
+     scanf(" %c", kembali);
+
+     if (kembali[0] == 'y' || kembali[0] == 'Y')
+     {
+          mulai();
+     }
+     else
+     {
+          printf("Terimakasih Telah Bermain");
+     }
+}
+
+// fungsi jika jawaban user benar
+void benar()
+{
+     printf("\n-----------Selamat Jawaban Anda Benar!!\\(^-^)/------------\n\n");
+}
+
+// fungsi jika jawaban user salah
+void GameOver()
+{
+     lv = 11;
+     printf("\n---------Maaf Jawaban Anda Salah! (T-T)--------- \n\n");
+     printf("Permainan Telah Berakhir!\n");
+     printf("Anda Membawa Pulang Sejumlah Uang : %li \n", uang);
+     puts("-------------------------------------------------");
+     kembali();
+}
+
+// fungsi jika jawaban user salah saat sudah melalui checkpoint
+void GameOverCheckpoint()
+{
+     lv = 11;
+     printf("\n---------Maaf Jawaban Anda Salah! (T-T)--------- \n\n");
+     printf("Permainan Telah Berakhir!\n");
+     printf("Semua Uang yang Telah Anda Kumpulkan Hangus\n");
+     puts("-------------------------------------------------");
+     kembali();
+}
+
+// fungsi ketika user mencapai titik aman yaitu pada level 5
+void checkpoint()
+{
+     char cekpoin[2];
+     printf("Selamat anda telah mencapai titik aman!\n");
+     printf("Apakah anda ingin lanjut bermain dengan konsekuensi jika jawaban pada soal berikutnya salah maka, tidak mendapatkan apa-apa\n");
+     printf("atau berhenti sampai disini dengan nominal uang Rp50.000.000,00 ?\n");
+     printf("Masukkan pilihan anda lanjut atau tidak (y/t) : ");
+     scanf("\n%s", cekpoin);
+     printf("\n");
+     if (cekpoin[0] == 'Y' || cekpoin[0] == 'y')
+     {
+          soal6();
+     }
+     if (cekpoin[0] == 'T' || cekpoin[0] == 't')
+     {
+          lv = 11;
+          printf("Permainan Telah Berakhir!\n");
+          printf("Selamat Anda Berhasil Membawa Pulang Sejumlah Uang : %li \n", uang);
+          puts("-------------------------------------------------");
+          kembali();
+     }
+}
+
 // fungsi untuk memulai permainan
 void mulai()
 {
-     k = 0; // untuk mengembalikan nilai uang
+     // untuk mengembalikan nilai uang
+     int k;
+     k = 0; 
      uang = uang * k;
 
      menu();
@@ -174,3 +261,4 @@ void mulai()
           printf("Terimakasih Telah Berkunjung!");
      }
 }
+
