@@ -2,11 +2,7 @@
 // Varibel yang diperlukan
 int lv, pilihan;
 long int uang;
-char jwb[4];
-
-// untuk mengembalikan nilai uang
-int k;
-     
+char jwb[10];
 
 // function declaration
 void mulai();
