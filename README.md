@@ -21,7 +21,7 @@ Proyek Lab Pemograman A
 
 **Pastikan username dan password telah didaftarkan sebelumnya**
 
-### Anggota kelompok : 
+### Anggota kelompok
 ```Ahmad Naziel Firdaus 2108107010094```
 
 ```M Zaki Zamani 2108107010014```
@@ -29,3 +29,6 @@ Proyek Lab Pemograman A
 ```Yahdina Ahsya 2108107010055```
 
 ```Afifah Nibras 2108107010097```
+
+### Presentasi
+https://www.youtube.com/watch?v=GC89d_LZHcw
